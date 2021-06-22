@@ -64,6 +64,24 @@
             </section>
           </section>
       </div>
+      <div class="main-middle">
+          <div class="jumbotron-top">
+              <div class="jumbo-text">
+                <h1>go ahead and build your own pizza <br> we won't <br> judge!</h1>
+              </div>
+              <div class="jumbo-img-container">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+              </div>
+          </div>
+          <div class="jumbotron-bot">
+              <img src="../assets/img/h1-team-1a-700x700.jpg" alt="">
+              <img src="../assets/img/h1-team-2a.jpg" alt="">
+              <img src="../assets/img/h1-team-4a.jpg" alt="">
+              <img src="../assets/img/h1-team-3a.jpg" alt="">
+          </div>
+      </div>
   </div>
 </template>
 
@@ -160,8 +178,9 @@ export default {
 /* SECTION BOTTOM */
 .main-section-bot {
     display: flex;
-    height: 500px;
+    height: 770px;
     width: 100%;
+    margin-bottom: 5px;
     border: 1px solid blue
 }
 
@@ -183,17 +202,21 @@ export default {
     width: 50%;
 }
 
-
 .offers_container {
-    height: 60%;
+    height: 80%;
     width: 50%;
     border: 1px solid blue;
 }
-.offer-description{
+.offer-description {
     display: flex;
+    margin: 10px 0;
     justify-content: space-between;
     border: 1px solid yellow;
 }
+.offer-description  h3 {
+    margin-bottom: 6px;
+}
+
 .offer-type {
     width: 85%;
     border: 1px solid greenyellow;
@@ -201,4 +224,69 @@ export default {
 /* /SECTION BOTTOM-RIGHT */
 
 /* /SECTION BOTTOM */
+
+/* MAIN MIDDLE */
+.main-middle {
+    height: 594px;
+}
+/* JUMBOTRON TOP */
+.jumbotron-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.jumbo-text {
+    position: absolute;
+    color: white;
+    width: 360px;
+    margin-left: 20%;
+    font-size: 31px;
+    text-transform: uppercase;
+}
+.jumbo-text > h1 {
+    line-height: 67px;
+}
+
+.jumbo-img-container {
+    height: 100%;
+    width: 100%;
+}
+.img1 {
+    height: 24%;
+    background-image: url(/img/h3-background-img.3d6f30b4.jpg);
+    background-size: 90%;
+    background-position-y: 143px;
+    background-position-x: 50%;
+}
+.img2 {
+    height: 52%;
+    background-image: url(/img/h3-background-img.3d6f30b4.jpg);
+    background-size: 90%;
+    background-position-y: 986px;
+    background-position-x: 50%;
+}
+.img3 {
+    height: 24%;
+    background-image: url(/img/h3-background-img.3d6f30b4.jpg);
+    background-size: 90%;
+    background-position-y: 432px;
+    background-position-x: 50%;
+}
+/* /JUMBOTRON TOP */
+
+/* JUMBOTRON BOT */
+.jumbotron-bot {
+    display: flex;
+    height: 435px;
+    width: 100%;
+}
+.jumbotron-bot > img {
+    width: calc(100% / 4);
+}
+/* /JUMBOTRON BOT */
+/* /MAIN MIDDLE */
 </style>

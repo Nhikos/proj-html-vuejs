@@ -20,9 +20,14 @@ export default {
 
 <style>
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~@fontsource/oswald/400.css';
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
 }
 </style>
