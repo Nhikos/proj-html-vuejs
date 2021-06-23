@@ -87,7 +87,7 @@ export default {
 <style scoped>
 .footer {
     display: flex;
-    height: 700px;
+    height: 630px;
 }
 
 .background {
@@ -158,8 +158,9 @@ span {
 }
 
 .section-right {
-    background-image: url(../assets/img/footer-img-1.jpg);
     width: 50%;
+    background-image: url(../assets/img/footer-img-1.jpg);
+    background-size: contain;
 }
 
 .logo-footer {
