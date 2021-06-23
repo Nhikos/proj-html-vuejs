@@ -1,19 +1,28 @@
 <template>
   <div id="app">
     <Header />
-    <Main />
+    <MainTop />
+    <MainMiddle />
+    <MainBottom />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Main from './components/Main.vue'
+import MainTop from './components/MainTop.vue'
+import MainMiddle from './components/MainMiddle.vue'
+import MainBottom from './components/MainBottom.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main,
+    MainTop,
+    MainMiddle,
+    MainBottom,
+    Footer
   }
 }
 </script>

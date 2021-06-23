@@ -55,7 +55,7 @@ export default {
 }
 
 .header > img {
-    width: 16%;
+    width: 12%;
 }
 
 a {
