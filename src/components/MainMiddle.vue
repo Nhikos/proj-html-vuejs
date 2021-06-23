@@ -16,12 +16,14 @@
             <img src="../assets/img/h1-team-4a.jpg" alt="">
             <img src="../assets/img/h1-team-3a.jpg" alt="">
         </div>
-        <div class="clients">
-            <img src="../assets/img/h1-clients-img-4.png" alt="">
-            <img src="../assets/img/h1-clients-img-3.png" alt="">
-            <img src="../assets/img/h1-clients-img-1.png" alt="">
-            <img src="../assets/img/h1-clients-img-2.png" alt="">
-            <img src="../assets/img/h1-clients-img-5.png" alt="">
+        <div class="clients-background">
+            <div class="clients">
+                <img src="../assets/img/h1-clients-img-4.png" alt="">
+                <img src="../assets/img/h1-clients-img-3.png" alt="">
+                <img src="../assets/img/h1-clients-img-1.png" alt="">
+                <img src="../assets/img/h1-clients-img-2.png" alt="">
+                <img src="../assets/img/h1-clients-img-5.png" alt="">
+            </div>
         </div>
         <div class="pizza-menu">
             <div class="pizza-menu-text">
@@ -30,19 +32,66 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, necessitatibus! Dolorem rem nesciunt mollitia facere enim, repellat illo est.</p>
             </div>
             <div class="pizza-carousel">
-                <div class="carta"></div>
-                <div class="carta"></div>
-                <div class="carta"></div>
-                <div class="carta"></div>
-                <div class="carta"></div>
+                <Card
+                v-for= "(pizza, index) in pizzas"
+                :key= "index"
+                :pizza="pizza"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Card from './Card.vue'
 export default {
-    name: "MainMiddle"
+    name: "MainMiddle",
+    components: {
+        Card
+    },
+
+    data: function() {
+    return {
+      pizzas: [
+          {
+              image: require("../assets/img/h3-product-img-1a-100x100.png"),
+              name: "BISMARCK",
+              price: "$30.00",
+              sold: true
+          },
+          {
+              image: require("../assets/img/h3-product-img-2a-150x150.png"),
+              name: "FIORI DI ZUCCA",
+              price: "$50.00",
+              sold: true
+          },
+          {
+              image: require("../assets/img/h3-product-img-6a-100x100.png"),
+              name: "VALDOSTANA",
+              price: "$55.00",
+              sold: true
+          },
+          {
+              image: require("../assets/img/h3-product-img-4a-150x150.png"),
+              name: "PIZZA TARTUFATA",
+              price: "$45.00",
+              sold: true
+          },
+          {
+              image: require("../assets/img/h3-product-img-5a-150x150.png"),
+              name: "FRANCESCANA",
+              price: "$25.00",
+              sold: true
+          },
+          {
+              image: require("../assets/img/h3-product-img-3a-150x150.png"),
+              name: "FRANCESCANA",
+              price: "$50.00",
+              sold: true
+          },
+      ],
+    }
+  }
 }
 </script>
 
@@ -108,6 +157,9 @@ export default {
 }
 /* /JUMBOTRON BOT */
 /* CLIENTS */
+.clients-background {
+    background-color: #f7f7f2;
+}
 .clients {
     display: flex;
     justify-content: space-around;
@@ -115,10 +167,10 @@ export default {
     width: 70%;
     height: 270px;
     margin: 0 auto;
-    border: 1px solid blue;
 }
 .clients > img {
     height: 120px;
+    cursor: pointer;
 }
 /* /CLIENTS */
 
@@ -127,14 +179,20 @@ export default {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    height: 750px;
+    height: 585px;
 }
 
 .pizza-menu-text {
     text-align: center;
     width: 30%;
     margin-top: 50px;
-    border: 1px solid red;
+    text-transform: uppercase;
+}
+.pizza-menu-text p {
+    text-transform: lowercase;
+}
+.pizza-menu-text h5 {
+   color: #d34322;
 }
 
 .pizza-carousel {
@@ -144,7 +202,6 @@ export default {
     width: 100%;
     height: 50%;
     margin-bottom: 70px;
-    border: 1px solid blue;
 }
 
 .carta {
@@ -154,6 +211,5 @@ export default {
     height: 326px;
     width: 263px;
     margin: 58px;
-    border: 1px solid green;
 }
 </style>

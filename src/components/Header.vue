@@ -4,17 +4,26 @@
    <div class="nav">
        <button> order online </button>
        <div class="actions">
-        <img class="svg" src="../assets/svg/svg-0.svg" alt=""><a href="#">lorem</a>
-        <a href="#">lorem</a>
-        <a href="#">lorem</a>
+        <ul>
+            <li
+            v-for= "(leftAction, index) in leftActions"
+            :key = "index">
+            <img class= "svg" :src="leftAction.image" alt="">
+            {{ leftAction.name }}
+            </li>
+        </ul>
         <img src="../assets/img/h5-logo-divided-header.png" alt="">
-        <a href="#">lorem</a>
-        <a href="#">lorem</a>
-        <a href="#">lorem</a>
+        <ul>
+            <li
+            v-for= "(rightAction, index) in rightActions"
+            :key = "index">
+            {{ rightAction.name }}
+            </li>
+        </ul>
        </div>
        <div class="shop-action">
-        <img class="svg" src="../assets/svg/svg-1.svg" alt=""><a href="#">lorem</a>
-        <img class="svg" src="../assets/svg/svg-11.svg" alt=""><a href="#">lorem</a>
+        <i class="fas fa-motorcycle"></i><a href="#">CART</a>
+        <i class="fas fa-search"></i><a href="#">SEARCH</a>
        </div>
    </div>
    <img src="../assets/img/h3-rev-img-6.png" alt="">
@@ -25,6 +34,44 @@
 <script>
 export default {
   name: 'Header',
+  data:function() {
+    return {
+        leftActions: [
+            {
+                name: "HOME",
+                link: "",
+                image: require("../assets/svg/svg-0.svg")
+            },
+            {
+                name: "PAGES",
+                link: "",
+                image: ""
+            },
+            {
+                name: "MENU",
+                link: "",
+                image: ""
+            }
+        ],
+        rightActions: [
+            {
+                name: "EVENT",
+                link: "",
+                image: ""
+            },
+            {
+                name: "BLOG",
+                link: "",
+                image: ""
+            },
+            {
+                name: "LANDING",
+                link: "",
+                image: ""
+            }
+        ]
+    }
+  }
 }
 </script>
 
@@ -50,8 +97,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: 25%;
-    width: 60%;
-    border: 1px solid blue;
+    width: 75%;
 }
 
 .header > img {
@@ -62,22 +108,26 @@ a {
     font-size: 12px;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 .actions{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: -50px;
 }
-.actions > .svg {
+.actions  .svg {
+    display: inline-block;
     width: 13px;
     margin: 3px
 }
 .actions > a {
     margin-right: 25px;
+    cursor: pointer;
 }
 .actions > img {
     width: 100px;
-    margin-right: 26px;
+    margin: 0 20px;
 }
 
 .shop-action {
@@ -91,16 +141,37 @@ a {
 }
 .shop-action > a {
     margin-right: 10px;
+    cursor: pointer;
 }
 
+ul {
+    display: flex;
+    color: white;
+    font-size: 12px;
+    margin: 0 15px;
+    list-style: none;
+}
 
+i {
+    color: white;
+    font-size: 10px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+li {
+    margin: 0 10px;
+    cursor: pointer;
+}
 button {
     color: white;
     font-size: 12px;
     padding: 10px 20px;
-    background-color: orangered;
+    margin-left: 0px;
+    background-color: #d2401e;
     text-transform: uppercase;
     border: none;
+    cursor: pointer;
 }
 
 </style>

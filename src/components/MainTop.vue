@@ -125,7 +125,7 @@ export default {
     padding: 3px 3px;
     margin: 10px 3px;
     border-radius: 50%;
-    background-color: red;
+    background-color: #b7903c;
 }
 
 
@@ -134,8 +134,11 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 45%;
-    border: 1px solid blue;
+    width: 30%;
+}
+
+.fa-quote-left {
+    color: #b7903c;
 }
 
 .prev {
@@ -161,13 +164,11 @@ export default {
     height: 770px;
     width: 100%;
     margin-bottom: 5px;
-    border: 1px solid blue
 }
 
 /* SECTION BOTTOM-LEFT */
 .main-section-bot_left {
     width: 50%;
-    border: 1px solid red;
     background-image:url(../assets/img/h1-img-4.jpg);
     background-size: cover;
 }
@@ -183,23 +184,28 @@ export default {
 }
 
 .offers_container {
-    height: 80%;
-    width: 50%;
-    border: 1px solid blue;
+    width: 40%;
 }
+
+.offers_container span {
+    color: #777777;
+}
+
 .offer-description {
     display: flex;
     margin: 10px 0;
     justify-content: space-between;
-    border: 1px solid yellow;
 }
 .offer-description  h3 {
     margin-bottom: 6px;
 }
 
+.offer-price {
+    color: #b14e38;
+}
+
 .offer-type {
     width: 85%;
-    border: 1px solid greenyellow;
 }
 /* /SECTION BOTTOM-RIGHT */
 /* /SECTION BOTTOM */

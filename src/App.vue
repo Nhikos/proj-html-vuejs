@@ -23,7 +23,7 @@ export default {
     MainMiddle,
     MainBottom,
     Footer
-  }
+  },
 }
 </script>
 

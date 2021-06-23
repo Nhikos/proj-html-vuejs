@@ -1,7 +1,45 @@
 <template>
   <div class="footer">
       <section class="section-left background">
-
+          <div class="container">
+            <h4>FIND OUR RESTAURANTS</h4>
+            <Infobox
+            v-for= "(info, index) in infos"
+            :key= "index"
+            :info="info"
+            />
+          </div>
+          <div class="container">
+            <h4>WORKING HOURS</h4>
+            <div class="working">
+                <div class="section">
+                    <h5>MONDAY</h5>
+                    <span>Kitchen Closed</span>
+                </div>
+                <div class="section">
+                    <h5>TUESDAY UNTIL FRIDAY</h5>
+                    <h6>9:00 - 22:00</h6>
+                </div>
+                <div class="section">
+                    <h5>Saturday <span>*</span></h5>
+                    <h6>Saturday 11am to midnight</h6>
+                </div>
+                <div class="section">
+                    <h5>SUNDAY</h5>
+                    <h6>9:00 - 22:00</h6>
+                </div>
+                <div class="section">
+                    <span class="social">
+                        <h5>Follow Us:</h5> 
+                        <i class="fab fa-twitter"></i><i class="fab fa-facebook-f"></i><i class="fab fa-instagram"></i><i class="fab fa-linkedin-in"></i>
+                    </span>
+                </div>
+            </div>
+          </div>
+          <div class="container">
+              <h2>The don peppe crew first and foremost values an authentic, well baked slice of pizza.</h2>
+          </div>
+          <img class="logo-footer" src="../assets/img/footer-bottom-img.png" alt="">
       </section>
       <section class="section-right">
 
@@ -10,8 +48,39 @@
 </template>
 
 <script>
+import Infobox from './Infobox.vue'
 export default {
-    name: "Footer"
+    name: "Footer",
+    components: {
+        Infobox
+    },
+
+    data: function() {
+        return {
+            infos: [
+                {
+                    via: "1614 E. Bell Rd #104.",
+                    city: "Salerno, AZ 85022",
+                    telephone: "(602)867-1010",
+                },
+                {
+                    via: "204 E. Pizzetta Tommaso",
+                    city: "Sorrento, AZ 85022",
+                    telephone: "(358) 867-1010",
+                },
+                {
+                    via: "Vale Puglia 54",
+                    city: "Torre Del Greco, AZ 85022",
+                    telephone: "(359) 867-1010",
+                },
+                {
+                    via: "Corso Itali AA",
+                    city: "Naples, AZ 85022",
+                    telephone: "(989) 867-1010",
+                },
+            ],
+        }
+    }
 }
 </script>
 
@@ -30,7 +99,73 @@ export default {
 .section-right {
     width: 50%;
 }
+
+.section-left {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    padding: 125px 50px;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+h2 {
+    color: white;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: #af8a3a;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    color: #af8a3a;
+    text-transform: uppercase;
+}
+
+h6 {
+    color: #a7a7a7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+span {
+    color: red;
+    font-size: 14px;
+}
+
+.social > h5 {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.social > i {
+    color: white;
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.container {
+    height: 458px;
+    width: 252px;
+}
+.container:nth-of-type(3) {
+    width: 230px;
+}
+
 .section-right {
     background-image: url(../assets/img/footer-img-1.jpg);
+    width: 50%;
+}
+
+.logo-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 50px 35px 0;
 }
 </style>
